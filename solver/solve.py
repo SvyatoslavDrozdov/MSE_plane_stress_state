@@ -14,9 +14,10 @@ def get_solution(size):
 
     # Задание силы.
     force = np.zeros(2 * nodes_number - 2 * (2 * height_number + 1))
-    force[-1] = -1e8
-    force[-3] = -1e8
-    force[-5] = -1e8
+    force[-1] = -3e8
+    # force[-1] = -1e8
+    # force[-3] = -1e8
+    # force[-5] = -1e8
 
     global_stiffness = read_data(size)
     K = global_element_matrix(global_stiffness, size)

@@ -6,7 +6,7 @@ from solver.solve import get_solution
 # Этот код строит деформированное состояние. В нем в начале задается параметр "size".
 # size: [количество делений по высоте, количество делений по длине]
 
-size = "10_20"
+size = "30_60"
 
 displacement = get_solution(size)
 height_number = int(size.split("_")[0])

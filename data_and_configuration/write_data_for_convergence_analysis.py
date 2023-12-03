@@ -54,9 +54,9 @@ geometry_partition_4 = ["40_80"]
 geometry_partition_5 = ["45_90"]
 geometry_partition_6 = ["50_100"]
 
-write_convergence_data(geometry_partition_1)
-write_convergence_data(geometry_partition_2)
+# write_convergence_data(geometry_partition_1)
+# write_convergence_data(geometry_partition_2)
 # write_convergence_data(geometry_partition_3)
-# write_convergence_data(geometry_partition_4)
+write_convergence_data(geometry_partition_4)
 # write_convergence_data(geometry_partition_5)
 # write_convergence_data(geometry_partition_6)
