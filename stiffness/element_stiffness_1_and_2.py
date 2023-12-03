@@ -1,5 +1,5 @@
 from geometry.make_geometry import nodes_of_elements, create_geometry
-from other.element_stiffness import get_K_e
+from stiffness.element_stiffness import get_K_e
 
 
 def write_K_1_K_2(length, height, length_number, height_number):
