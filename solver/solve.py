@@ -8,14 +8,12 @@ def get_solution(size):
     length_number = int(size.split("_")[1])
     nodes_number = (2 * length_number + 1) * (2 * height_number + 1)
 
-    F = np.zeros(2 * nodes_number - 2 * (2 * height_number + 1))
-    F[-1] = -1e8
-    F[-3] = -1e8
-    F[-5] = -1e8
-    # F[284] = -1e10
-    # F[1] = -1e10
-    # F[3] = -1e9
-    # F[5] = -1e9 /2
+    # Задание силы.
+    force = np.zeros(2 * nodes_number - 2 * (2 * height_number + 1))
+    force[-1] = -1e8
+    force[-3] = -1e8
+    force[-5] = -1e8
+
     global_stiffness = read_data(size)
     K = global_element_matrix(global_stiffness, size)
 
@@ -37,7 +35,7 @@ def get_solution(size):
             new_K.append(add_line)
     new_K = np.array(new_K)
 
-    calculated_u = np.linalg.solve(new_K, F)
+    calculated_u = np.linalg.solve(new_K, force)
 
     displacement = np.zeros(2 * nodes_number)
     calculated_u_num = 0
