@@ -3,6 +3,11 @@ import numpy as np
 
 
 def read_data():
+    """
+    Эта функция читает рассчитанные заранее данные сходимости перемещений и выдает их в готовом для построения графика
+    сходимости виде.
+    :return: data_to_plot
+    """
     # info = open(rf"C:\Users\xxl20\PycharmProjects\FEM_2\data_and_configuration\convergence_analysis_bottom_right.txt")
     info = open(rf"C:\Users\xxl20\PycharmProjects\FEM_2\data_and_configuration\convergence_analysis_top_right.txt")
     text = ""

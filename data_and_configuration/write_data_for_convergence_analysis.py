@@ -5,6 +5,11 @@ start_time = time.time()
 
 
 def write_convergence_data(data):
+    """
+    Эта функция записывает данные для построения графиков сходимости.
+    :param data: "N_2*N" - разбиение на деления прямоугольной области.
+    :return: ничего не возвращает, но перезаписывает текстовые файлы.
+    """
     info = open(rf"C:\Users\xxl20\PycharmProjects\FEM_2\data_and_configuration\convergence_analysis_bottom_right.txt",
                 mode="a")
 

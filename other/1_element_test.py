@@ -7,8 +7,8 @@ global_stiffness = read_data("2_4")
 K_4 = global_stiffness[4]
 Force = np.zeros(6)
 
-# Force[0] = 1e10  # u of node:9
-Force[1] = -1e10  # v of node:9
+# Force[0] = 1e10  # u of node:9 -- ok
+Force[1] = -1e10  # v of node:9 -- ok
 # Force[2] = -1e10  # u of node:16  -- ok
 # Force[3] = +1e11 # v of node:16  -- ok
 # Force[4] = +1e10  # u of node:17  -- ok

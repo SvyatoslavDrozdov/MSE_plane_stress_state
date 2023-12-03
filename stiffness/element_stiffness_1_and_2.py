@@ -3,6 +3,13 @@ from other.element_stiffness import get_K_e
 
 
 def write_K_1_K_2(length, height, length_number, height_number):
+    """
+    :param length: длина прямоугольной области
+    :param height: высота прямоугольной области
+    :param length_number: количество делений по длине
+    :param height_number: количество делений по высоте
+    :return:
+    """
     data = open(rf"C:\Users\xxl20\PycharmProjects\FEM_2\stiffness\element_stiffness_1_and_2.txt", mode="w")
 
     element_1 = 1

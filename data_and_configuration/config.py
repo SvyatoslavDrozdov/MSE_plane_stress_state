@@ -1,5 +1,6 @@
 import numpy as np
 
+# Здесь задаются параметры материала и размер прямоугольной области.
 young_module = 2.1e11
 poisson_ratio = 0.3
 E = np.array([[1, poisson_ratio, 0],

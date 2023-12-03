@@ -3,9 +3,10 @@ from data_and_configuration.config import length, height
 from geometry.make_geometry import create_geometry, nodes_of_elements
 from solver.solve import get_solution
 
-data = ["1_2", "2_4", "3_6", "4_8", "5_10", "6_12", "7_14", "8_16", "9_18"]
+# Этот код строит деформированное состояние. В нем в начале задается параметр "size".
+# size: [количество делений по высоте, количество делений по длине]
 
-size = "30_60"
+size = "10_20"
 
 displacement = get_solution(size)
 height_number = int(size.split("_")[0])

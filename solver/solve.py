@@ -4,6 +4,10 @@ from stiffness.global_stiffness import global_element_matrix
 
 
 def get_solution(size):
+    """
+    :param size: [количество делений по высоте, количество делений по длине]
+    :return: перемещения всех узлов: [u_1, v_1, u_2, v_2, ..., u_last, v_last]
+    """
     height_number = int(size.split("_")[0])
     length_number = int(size.split("_")[1])
     nodes_number = (2 * length_number + 1) * (2 * height_number + 1)
@@ -44,7 +48,4 @@ def get_solution(size):
             displacement[num] = calculated_u[calculated_u_num]
             calculated_u_num += 1
 
-    # print(f"displacement = {displacement}")
     return displacement
-
-# get_solution("2_3")

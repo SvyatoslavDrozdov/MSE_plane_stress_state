@@ -5,6 +5,10 @@ import time
 
 
 def get_K_e(elem_coord):
+    """
+    :param elem_coord: [[x_1, y_1], [x_2, y_2], [x_3, y_3], [x_4, y_4], [x_5, y_5], [x_6, y_6]] - координаты узлов элемента
+    :return: K_e - матрица жесткости элемента
+    """
     start_time = time.time()
 
     # elem_coord = [[x_0,y_0], ... , [x_5, y_5]]

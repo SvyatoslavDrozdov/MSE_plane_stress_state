@@ -1,9 +1,14 @@
 import numpy as np
 from geometry.make_geometry import nodes_of_elements
-from data_and_configuration.write_and_read_data import read_data
 
 
 def global_element_matrix(all_element_K, size):
+    """
+    :param all_element_K: {1: K_1, 2:K_2 ...} - список ключи которого это номера узлов с единицы, а значения которого -
+        это матрицы жесткостей соответствующих элементов
+    :param size: [количество делений по высоте, количество делений по длине]
+    :return: global_K - глобальная матрица жесткости конструкции
+    """
     height_number = int(size.split("_")[0])
     length_number = int(size.split("_")[1])
     number_of_nodes = (2 * length_number + 1) * (2 * height_number + 1)
@@ -31,7 +36,3 @@ def global_element_matrix(all_element_K, size):
                 global_K[x_0_0_global + 1][y_0_0_global + 1] += K_e[x_0_0_local + 1][y_0_0_local + 1]
 
     return global_K
-
-# all_stiffness = read_data("8_8")
-# K = global_element_matrix(all_stiffness, "8_8")
-# print(K[1])
