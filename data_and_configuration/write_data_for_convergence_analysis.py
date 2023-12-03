@@ -6,12 +6,20 @@ start_time = time.time()
 
 def write_convergence_data(data):
     """
-    Эта функция записывает данные для построения графиков сходимости.
+    Эта функция записывает данные для построения графиков сходимости. Параметр point_position в начале отвечает за то
+    перемещения какой точки будут отслеживаться: верхне правой ("top") или нижней правой ("bottom").
     :param data: "N_2*N" - разбиение на деления прямоугольной области.
     :return: ничего не возвращает, но перезаписывает текстовые файлы.
     """
-    info = open(rf"C:\Users\xxl20\PycharmProjects\FEM_2\data_and_configuration\convergence_analysis_bottom_right.txt",
-                mode="a")
+    point_position = "bottom"
+
+    if point_position == "top":
+        info = open(rf"C:\Users\xxl20\PycharmProjects\FEM_2\data_and_configuration\convergence_analysis_top_right.txt",
+                    mode="a")
+    else:
+        info = open(
+            rf"C:\Users\xxl20\PycharmProjects\FEM_2\data_and_configuration\convergence_analysis_bottom_right.txt",
+            mode="a")
 
     for partition in data:
         start_iteration = time.time()
@@ -20,11 +28,13 @@ def write_convergence_data(data):
         length_number = int(partition.split("_")[1])
         number_of_elements = (2 * height_number + 1) * (2 * length_number + 1)
         displacement = get_solution(partition)
-        # last_u = displacement[-2]
-        # last_v = displacement[-1]
 
-        last_u = displacement[2 * (2 * length_number + 1) - 2]
-        last_v = displacement[2 * (2 * length_number + 1) - 1]
+        if point_position == "top":
+            last_u = displacement[-2]
+            last_v = displacement[-1]
+        else:
+            last_u = displacement[2 * (2 * length_number + 1) - 2]
+            last_v = displacement[2 * (2 * length_number + 1) - 1]
 
         info.write(f"{number_of_elements}, {last_u}, {last_v} \n")
 
